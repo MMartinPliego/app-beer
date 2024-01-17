@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Beer App</string>
+
+    <string name="txt_empty_beer_home">No hay datos que mostrar</string>
+    <string name="beer_graduation">%1$s º</string>
+
+</resources>

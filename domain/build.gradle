@@ -1,0 +1,73 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-kapt'
+}
+
+ext {
+    hilt = "2.44"
+    hiltCompiler = "2.44"
+    androidXHilt = "1.1.0"
+    lifecycleVersion = "2.5.1"
+    moshiKotlinCodegen = "1.9.2"
+    moshiKotlin = "1.13.0"
+    coroutineVersion = "1.5.0"
+    kotlinVersion = "1.6.10"
+    junit = "4.13.2"
+}
+
+android {
+    namespace 'com.orumgames.domain'
+    compileSdk 33
+
+    defaultConfig {
+        minSdk 23
+        targetSdk 33
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    kapt {
+        correctErrorTypes = true
+    }
+
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'org.jetbrains.kotlin:kotlin-reflect:1.7.21'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    implementation "junit:junit:$junit"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutineVersion"
+    implementation "org.jetbrains.kotlin:kotlin-test-junit5:$kotlinVersion"
+
+    //DI
+    implementation "com.google.dagger:hilt-android:$hilt"
+    kapt "com.google.dagger:hilt-compiler:$hiltCompiler"
+    kapt "androidx.hilt:hilt-compiler:$androidXHilt"
+
+    //Lifecycle
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion"
+
+    //Moshi
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshiKotlinCodegen"
+    implementation "com.squareup.moshi:moshi-kotlin:$moshiKotlin"
+}

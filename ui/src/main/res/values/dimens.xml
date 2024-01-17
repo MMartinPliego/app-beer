@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Generic dimens -->
+    <dimen name="dimen_8">8dp</dimen>
+    <dimen name="dimen_12">12dp</dimen>
+    <dimen name="dimen_60">60dp</dimen>
+    <dimen name="dimen_400">400dp</dimen>
+    
+    <!-- Text dimens -->
+    <dimen name="text_s">14sp</dimen>
+
+</resources>

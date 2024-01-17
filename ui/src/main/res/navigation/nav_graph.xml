@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navGraph"
+    app:startDestination="@+id/navigation_splash">
+
+    <fragment
+        android:id="@+id/navigation_splash"
+        android:name="com.orumgames.ui.splash.SplashFragment"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            android:id="@+id/go_to_home"
+            app:destination="@id/navigation_home"
+            app:popUpTo="@+id/navigation_splash"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.orumgames.ui.home.HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            android:id="@+id/homeToNavigationDetailBeer"
+            app:destination="@id/navigation_detail_beer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_detail_beer"
+        android:name="com.orumgames.ui.detailbeer.DetailBeerFragment"
+        tools:layout="@layout/fragment_detail_beer">
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+
+</navigation>

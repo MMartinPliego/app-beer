@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="FullScreenDialogTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="recyclerViewStyle">@style/MultiTouchDisabledStyle</item>
+        <item name="android:scrollViewStyle">@style/MultiTouchDisabledStyle</item>
+        <item name="android:horizontalScrollViewStyle">@style/MultiTouchDisabledStyle</item>
+    </style>
+
+    <style name="MultiTouchDisabledStyle">
+        <item name="android:splitMotionEvents">false</item>
+        <item name="android:overScrollMode">never</item>
+    </style>
+</resources>
